@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div class="module">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="module aligned">
+            {% for field in form %}
+            <div class="form-row">
+                {{ field.errors }}
+                <div>
+                    <label class="required" for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                    {{ field }}
+                    {% if field.help_text %}
+                    <div class="help">{{ field.help_text }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </fieldset>
+        
+        <div class="submit-row">
+            <input type="submit" value="Upload" class="default">
+        </div>
+    </form>
+</div>
+{% endblock %}

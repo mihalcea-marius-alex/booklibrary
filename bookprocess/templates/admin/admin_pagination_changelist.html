@@ -1,0 +1,30 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+<div class="object-tools">
+    <ul class="object-tools">
+        {% if populate_url and populate_button %}
+        <li>
+            <a class="addlink" href="{{ populate_url }}">{{ populate_button }}</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+{{ block.super }}
+{% endblock %}
+
+{% block object-tools-items %}
+    {{ block.super }}
+    <li>
+        {% if multiple_url and multiple_button%}
+        <a class="addlink" href="{{ multiple_url }}"> {{multiple_button}}</a>
+        {% endif %}
+    </li>
+{% endblock %}
+
+{% block pagination %} 
+{{ block.super }} 
+<script> 
+    window.list_per_page_options = "{{ list_per_page_options|join:',' }}"; 
+</script>
+{% endblock %}

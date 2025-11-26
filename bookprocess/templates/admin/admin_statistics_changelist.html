@@ -1,0 +1,124 @@
+{% extends "admin/change_list.html" %}
+
+{% block content %}
+<p>
+  <a href="?export=csv" class="button" style="margin-bottom:20px;">Export CSV</a>
+</p>
+
+<!-- 1️⃣ Books per Genre (Vertical Bar, hide Y axis) -->
+<h2>Books per Genre</h2>
+<canvas id="booksPerGenreChart" style="max-width:600px; max-height:300px;"></canvas>
+
+<ul>
+  {% for item in books_per_genre %}
+    <li>{{ item.genre__name }}: {{ item.count }}</li>
+  {% endfor %}
+</ul>
+
+<!-- 2️⃣ Authors per Nationality (Pie Chart) -->
+<h2>Authors per Nationality</h2>
+<canvas id="authorsPerNationalityChart" style="max-width:800px; max-height:300px;"></canvas>
+
+<ul>
+  {% for item in authors_per_nationality %}
+    <li>{{ item.nationality__name }}: {{ item.count }}</li>
+  {% endfor %}
+</ul>
+
+<!-- 3️⃣ Authors Stats (Horizontal Bar, hide X axis) -->
+<h2>Authors Statistics</h2>
+<canvas id="authorsStatsChart" style="max-width:600px; max-height:300px;"></canvas>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Solo Books</th>
+      <th>Co-authored Books</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in author_stats %}
+      <tr>
+        <td>{{ a.author }}</td>
+        <td>{{ a.solo_books }}</td>
+        <td>{{ a.coauthored_books }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  new Chart(document.getElementById('booksPerGenreChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: [{% for item in books_per_genre %}"{{ item.genre__name }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+      datasets: [{
+        label: 'Number of Books',
+        data: [{% for item in books_per_genre %}{{ item.count }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: { display: false }
+      },
+      plugins: { legend: { display: false } },
+      layout: { padding: { top: 10, bottom: 10 } }
+    }
+  });
+
+  new Chart(document.getElementById('authorsPerNationalityChart').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: [{% for item in authors_per_nationality %}"{{ item.nationality__name }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+      datasets: [{
+        data: [{% for item in authors_per_nationality %}{{ item.count }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 159, 64, 0.6)'
+        ]
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'right' } },
+      layout: { padding: { top: 10, bottom: 10 } }
+    }
+  });
+
+  new Chart(document.getElementById('authorsStatsChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: [{% for a in author_stats %}"{{ a.author }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+      datasets: [
+        {
+          label: 'Solo Books',
+          data: [{% for a in author_stats %}{{ a.solo_books }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+          backgroundColor: 'rgba(54, 162, 235, 0.6)'
+        },
+        {
+          label: 'Co-authored Books',
+          data: [{% for a in author_stats %}{{ a.coauthored_books }}{% if not forloop.last %}, {% endif %}{% endfor %}],
+          backgroundColor: 'rgba(255, 206, 86, 0.6)'
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { x: { display: false } },
+      layout: { padding: { top: 10, bottom: 10 } }
+    }
+  });
+</script>
+{% endblock %}

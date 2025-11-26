@@ -1,0 +1,30 @@
+{% extends "admin/login.html" %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <style>
+        .book-library-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #417690;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .book-library-btn:hover {
+            background-color: #2c5777;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="/" class="book-library-btn">Book Library</a>
+    </div>
+
+    {{ block.super }}
+{% endblock %}

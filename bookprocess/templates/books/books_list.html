@@ -1,0 +1,444 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Library</title>
+<link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+<style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* HEADER */
+    header {
+        background: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 25px;
+        position: relative;
+        transition: background 0.3s;
+    }
+    header .container-header {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    /* HEADER BUTTONS */
+    .header-buttons {
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .admin-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: #2c3e50;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    .admin-button:hover {
+        background: #34495e;
+        transform: scale(1.1);
+    }
+    .admin-button svg {
+        width: 20px;
+        height: 20px;
+        stroke: white;
+    }
+
+    /* DARK MODE TOGGLE */
+    .dark-toggle {
+        background: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .dark-toggle:hover {
+        background: #34495e;
+        transform: scale(1.1);
+    }
+
+    /* Visually hidden for accessibility */
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    /* Theme icons */
+    .theme-icon-when-light,
+    .theme-icon-when-dark {
+        display: none;
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Show sun in light mode */
+    body:not(.dark-mode) .theme-icon-when-light {
+        display: block;
+    }
+
+    /* Show moon in dark mode */
+    body.dark-mode .theme-icon-when-dark {
+        display: block;
+    }
+
+    .dark-toggle svg {
+        stroke: white;
+    }
+
+    /* GRID */
+    .container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        gap: 25px;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 20px 40px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        height: fit-content;
+        position: sticky;
+        top: 20px;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .sidebar h3 {margin-bottom:15px; font-size:1.1rem; color:#2c3e50; transition: color 0.3s;}
+    .filter-group {margin-bottom:15px;}
+    .filter-group label {display:block; font-weight:600; margin-bottom:5px; color:#555; transition: color 0.3s;}
+    .filter-group select, .filter-group button {
+        width:100%; padding:10px; border-radius:4px; font-size:14px;
+    }
+    .filter-group select {border:1px solid #ddd; transition: background 0.3s, border 0.3s, color 0.3s;}
+    .filter-group button {background:#3498db; color:white; border:none; font-weight:600; cursor:pointer; transition: background 0.3s;}
+    .filter-group button:hover {background:#2980b9;}
+
+    /* CONTENT */
+    .content {display:flex; flex-direction:column;}
+    .top-controls {
+        display:flex; justify-content:space-between; align-items:center;
+        margin-bottom:15px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .per-page {
+        font-size:14px; color:#555; transition: color 0.3s;
+    }
+    .per-page select {
+        margin-left:5px; padding:5px 8px; border-radius:4px; border:1px solid #ddd;
+        transition: background 0.3s, border 0.3s, color 0.3s;
+    }
+
+    .search-bar {
+        background:white; padding:12px 16px; border-radius:8px;
+        box-shadow:0 2px 4px rgba(0,0,0,0.1);
+        display:flex; gap:10px;
+        transition: background 0.3s, color 0.3s;
+        flex: 1;
+        min-width: 300px;
+    }
+    .search-bar input {
+        flex:1; padding:10px; border:1px solid #ddd; border-radius:4px; font-size:14px;
+        transition: background 0.3s, border 0.3s, color 0.3s;
+    }
+    .search-bar button {
+        padding:10px 20px; background:#3498db; color:white;
+        border:none; border-radius:4px; cursor:pointer; font-weight:600;
+        transition: background 0.3s;
+    }
+    .search-bar button:hover {background:#2980b9;}
+
+    .books-grid {
+        display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+        gap:20px;
+    }
+    .book-card {
+        background:white; border-radius:8px; overflow:hidden;
+        box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        transition: transform .3s, box-shadow .3s, background 0.3s;
+        cursor:pointer;
+    }
+    .book-card:hover {transform:translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.15);}
+    .book-cover {width:100%; height:250px; background:#e0e0e0; display:flex; align-items:center; justify-content:center; color:#999;}
+    .book-cover img {width:100%; height:100%; object-fit:cover;}
+    .book-info {padding:10px;}
+    .book-title {font-size:1rem; font-weight:600; color:#2c3e50; margin-bottom:6px; transition: color 0.3s;}
+    .book-authors {color:#7f8c8d; font-size:0.85rem; margin-bottom:6px;}
+    .book-meta {display: flex; gap: 5px; flex-wrap: wrap;}
+    .badge {padding:3px 6px; border-radius:4px; font-size:0.75rem; font-weight:600;}
+    .badge-genre {background:#ecf0f1; color:#34495e;}
+    .badge-adapted {background:#e74c3c; color:white;}
+    .badge-isbn {background:#95a5a6; color:white; font-family:monospace;}
+    .pagination {display:flex; justify-content:center; gap:10px; margin-top:25px;}
+    .pagination a, .pagination span {
+        padding:6px 10px; background:white; border:1px solid #ddd; border-radius:4px; text-decoration:none; color:#3498db;
+        transition: background 0.3s, border 0.3s;
+    }
+    .pagination .current {
+        background:#3498db;
+        color:white;
+        border-color:#3498db;
+    }
+
+    .no-results {text-align:center; padding:40px 20px; color:#7f8c8d; font-size:1rem;}
+
+    /* DARK MODE */
+    body.dark-mode {background:#121212; color:#ddd;}
+    body.dark-mode h1 {color:#ddd;}
+    body.dark-mode header {background:#1e1e1e; box-shadow:0 2px 6px rgba(255,255,255,0.05);}
+    body.dark-mode .sidebar, body.dark-mode .search-bar, body.dark-mode .book-card {
+        background:#1f1f1f; color:#eee; box-shadow:0 2px 8px rgba(255,255,255,0.05);
+    }
+    body.dark-mode .sidebar h3 {color:#ddd;}
+    body.dark-mode .filter-group label, body.dark-mode .per-page {color:#aaa;}
+    body.dark-mode .filter-group select, body.dark-mode .search-bar input, body.dark-mode .per-page select {
+        background:#2a2a2a; border:1px solid #444; color:#eee;
+    }
+    body.dark-mode .book-title {color:#ddd;}
+    body.dark-mode .pagination a, body.dark-mode .pagination span {
+        background:#2a2a2a; border-color:#444; color:#3498db;
+    }
+    body.dark-mode .pagination .current {
+        background:#3498db;
+        color:white !important;
+        border-color:#3498db;
+    }
+    body.dark-mode .admin-button {background:#555;}
+    body.dark-mode .admin-button:hover {background:#666;}
+    body.dark-mode .dark-toggle {background:#555;}
+    body.dark-mode .dark-toggle:hover {background:#666;}
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+        .sidebar {
+            position: static;
+        }
+        .header-buttons {
+            right: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 {font-size: 1.5rem;}
+        .books-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        .top-controls {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .search-bar {
+            min-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Book Library</h1>
+    <div class="header-buttons">
+        <a href="{% url 'admin:index' %}" class="admin-button" title="Admin Panel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+        </a>
+        <button class="dark-toggle" id="themeToggle" title="Toggle Dark Mode">
+            <span class="visually-hidden theme-label-when-light">Toggle theme (current theme: light)</span>
+            <span class="visually-hidden theme-label-when-dark">Toggle theme (current theme: dark)</span>
+
+            <svg aria-hidden="true" class="theme-icon-when-light" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+
+            <svg aria-hidden="true" class="theme-icon-when-dark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>Filters</h3>
+        <form method="get">
+            <input type="hidden" name="search" value="{{ search_query }}">
+            <input type="hidden" name="per_page" value="{{ per_page }}">
+            <div class="filter-group">
+                <label for="genre">Genre</label>
+                <select id="genre" name="genre">
+                    <option value="">All</option>
+                    {% for genre in genres %}
+                    <option value="{{ genre.id }}" {% if genre_filter == genre.id|stringformat:"s" %}selected{% endif %}>{{ genre.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="adapted">Adapted</label>
+                <select id="adapted" name="adapted">
+                    <option value="">All</option>
+                    <option value="true" {% if adapted_filter == "true" %}selected{% endif %}>Yes</option>
+                    <option value="false" {% if adapted_filter == "false" %}selected{% endif %}>No</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="nationality">Author Nationality</label>
+                <select id="nationality" name="nationality">
+                    <option value="">All</option>
+                    {% for nat in nationalities %}
+                    <option value="{{ nat.id }}" {% if nationality_filter == nat.id|stringformat:"s" %}selected{% endif %}>{{ nat.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="filter-group">
+                <button type="submit">Apply Filters</button>
+            </div>
+        </form>
+    </aside>
+
+    <section class="content">
+        <div class="top-controls">
+            <form method="get" class="search-bar">
+                <input type="hidden" name="genre" value="{{ genre_filter }}">
+                <input type="hidden" name="adapted" value="{{ adapted_filter }}">
+                <input type="hidden" name="nationality" value="{{ nationality_filter }}">
+                <input type="hidden" name="per_page" value="{{ per_page }}">
+                <input type="text" name="search" placeholder="Search by title, author, or ISBN..." value="{{ search_query }}">
+                <button type="submit">Search</button>
+            </form>
+            <form method="get" class="per-page">
+                <input type="hidden" name="search" value="{{ search_query }}">
+                <input type="hidden" name="genre" value="{{ genre_filter }}">
+                <input type="hidden" name="adapted" value="{{ adapted_filter }}">
+                <input type="hidden" name="nationality" value="{{ nationality_filter }}">
+                Show:
+                <select name="per_page" onchange="this.form.submit()">
+                    <option value="10" {% if per_page == '10' %}selected{% endif %}>10</option>
+                    <option value="25" {% if per_page == '25' %}selected{% endif %}>25</option>
+                    <option value="50" {% if per_page == '50' %}selected{% endif %}>50</option>
+                </select> per page
+            </form>
+        </div>
+
+        {% if page_obj %}
+        <div class="books-grid">
+            {% for book in page_obj %}
+            <a href="{% url 'book-detail' book.id %}" style="text-decoration:none; color:inherit;">
+                <div class="book-card">
+                    <div class="book-cover">
+                        {% if book.cover %}
+                        <img src="{{ book.cover.url }}" alt="{{ book.title }}">
+                        {% else %}No Cover{% endif %}
+                    </div>
+                    <div class="book-info">
+                        <div class="book-title">{{ book.title }}</div>
+                        <div class="book-authors">
+                            {% for ba in book.bookauthor_set.all %}
+                                {{ ba.author }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="book-meta">
+                            {% if book.genre %}<span class="badge badge-genre">{{ book.genre.name }}</span>{% endif %}
+                            {% if book.adapted %}<span class="badge badge-adapted">Adapted</span>{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            {% if page_obj.has_previous %}
+            <a href="?page=1&search={{ search_query }}&genre={{ genre_filter }}&adapted={{ adapted_filter }}&nationality={{ nationality_filter }}&per_page={{ per_page }}">« First</a>
+            <a href="?page={{ page_obj.previous_page_number }}&search={{ search_query }}&genre={{ genre_filter }}&adapted={{ adapted_filter }}&nationality={{ nationality_filter }}&per_page={{ per_page }}">‹ Prev</a>
+            {% endif %}
+
+            <span class="current">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&search={{ search_query }}&genre={{ genre_filter }}&adapted={{ adapted_filter }}&nationality={{ nationality_filter }}&per_page={{ per_page }}">Next ›</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&search={{ search_query }}&genre={{ genre_filter }}&adapted={{ adapted_filter }}&nationality={{ nationality_filter }}&per_page={{ per_page }}">Last »</a>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="no-results">No books found.</div>
+        {% endif %}
+    </section>
+</div>
+
+<script>
+    const toggleButton = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

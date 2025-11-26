@@ -1,0 +1,817 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bookprocess.utils &mdash; Book Library 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Book Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bookprocess.html">bookprocess package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.admin.html">admin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminSave"><code class="docutils literal notranslate"><span class="pre">AdminSave</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminSave.save_model"><code class="docutils literal notranslate"><span class="pre">AdminSave.save_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminDelete"><code class="docutils literal notranslate"><span class="pre">AdminDelete</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminDelete.delete_model"><code class="docutils literal notranslate"><span class="pre">AdminDelete.delete_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminDelete.delete_queryset"><code class="docutils literal notranslate"><span class="pre">AdminDelete.delete_queryset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination"><code class="docutils literal notranslate"><span class="pre">AdminPagination</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.multiple_url"><code class="docutils literal notranslate"><span class="pre">AdminPagination.multiple_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.multiple_button"><code class="docutils literal notranslate"><span class="pre">AdminPagination.multiple_button</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.change_list_template"><code class="docutils literal notranslate"><span class="pre">AdminPagination.change_list_template</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.list_per_page"><code class="docutils literal notranslate"><span class="pre">AdminPagination.list_per_page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.list_per_page_options"><code class="docutils literal notranslate"><span class="pre">AdminPagination.list_per_page_options</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.__init__"><code class="docutils literal notranslate"><span class="pre">AdminPagination.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.populate_url"><code class="docutils literal notranslate"><span class="pre">AdminPagination.populate_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.populate_button"><code class="docutils literal notranslate"><span class="pre">AdminPagination.populate_button</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.changelist_view"><code class="docutils literal notranslate"><span class="pre">AdminPagination.changelist_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.Media"><code class="docutils literal notranslate"><span class="pre">AdminPagination.Media</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPagination.Media.js"><code class="docutils literal notranslate"><span class="pre">AdminPagination.Media.js</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate"><code class="docutils literal notranslate"><span class="pre">AdminPopulate</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.populate_form_class"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.populate_form_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.populate_command_class"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.populate_command_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.is_zip_file"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.is_zip_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.admin_file_upload_form"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.admin_file_upload_form</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.__init__"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.populate_route"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.populate_route</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.populate_title"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.populate_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.get_urls"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.get_urls()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate.populate_view"><code class="docutils literal notranslate"><span class="pre">AdminPopulate.populate_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate._execute_command"><code class="docutils literal notranslate"><span class="pre">AdminPopulate._execute_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate._handle_file_upload"><code class="docutils literal notranslate"><span class="pre">AdminPopulate._handle_file_upload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate._handle_command_execution"><code class="docutils literal notranslate"><span class="pre">AdminPopulate._handle_command_execution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulate._extract_excel_from_zip"><code class="docutils literal notranslate"><span class="pre">AdminPopulate._extract_excel_from_zip()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminCount"><code class="docutils literal notranslate"><span class="pre">AdminCount</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminCount.aggregate_count"><code class="docutils literal notranslate"><span class="pre">AdminCount.aggregate_count()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteCSV"><code class="docutils literal notranslate"><span class="pre">AdminWriteCSV</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteCSV.sections"><code class="docutils literal notranslate"><span class="pre">AdminWriteCSV.sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteCSV.__init__"><code class="docutils literal notranslate"><span class="pre">AdminWriteCSV.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteCSV.filename"><code class="docutils literal notranslate"><span class="pre">AdminWriteCSV.filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteCSV.export_csv"><code class="docutils literal notranslate"><span class="pre">AdminWriteCSV.export_csv()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteJSON"><code class="docutils literal notranslate"><span class="pre">AdminWriteJSON</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteJSON.actions"><code class="docutils literal notranslate"><span class="pre">AdminWriteJSON.actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteJSON.__init__"><code class="docutils literal notranslate"><span class="pre">AdminWriteJSON.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteJSON.filename"><code class="docutils literal notranslate"><span class="pre">AdminWriteJSON.filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminWriteJSON.export_as_json"><code class="docutils literal notranslate"><span class="pre">AdminWriteJSON.export_as_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulateForm"><code class="docutils literal notranslate"><span class="pre">AdminPopulateForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulateForm.allowed_extensions"><code class="docutils literal notranslate"><span class="pre">AdminPopulateForm.allowed_extensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulateForm.__init__"><code class="docutils literal notranslate"><span class="pre">AdminPopulateForm.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulateForm.file_label"><code class="docutils literal notranslate"><span class="pre">AdminPopulateForm.file_label</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulateForm.file_help_text"><code class="docutils literal notranslate"><span class="pre">AdminPopulateForm.file_help_text</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AdminPopulateForm.clean"><code class="docutils literal notranslate"><span class="pre">AdminPopulateForm.clean()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.NationalityAdmin"><code class="docutils literal notranslate"><span class="pre">NationalityAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.NationalityAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">NationalityAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.NationalityAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">NationalityAdmin.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.NationalityAdmin.populate_command_class"><code class="docutils literal notranslate"><span class="pre">NationalityAdmin.populate_command_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.GenreAdmin"><code class="docutils literal notranslate"><span class="pre">GenreAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.GenreAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">GenreAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.GenreAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">GenreAdmin.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.GenreAdmin.populate_command_class"><code class="docutils literal notranslate"><span class="pre">GenreAdmin.populate_command_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin.list_filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin.exclude"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin.exclude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin.changes_formatted"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin.changes_formatted()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.LogEntryAdmin.formatted_timestamp"><code class="docutils literal notranslate"><span class="pre">LogEntryAdmin.formatted_timestamp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.StatisticAdmin"><code class="docutils literal notranslate"><span class="pre">StatisticAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.StatisticAdmin.change_list_template"><code class="docutils literal notranslate"><span class="pre">StatisticAdmin.change_list_template</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.StatisticAdmin.get_books_per_genre"><code class="docutils literal notranslate"><span class="pre">StatisticAdmin.get_books_per_genre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.StatisticAdmin.get_authors_per_nationality"><code class="docutils literal notranslate"><span class="pre">StatisticAdmin.get_authors_per_nationality()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.StatisticAdmin.get_author_stats"><code class="docutils literal notranslate"><span class="pre">StatisticAdmin.get_author_stats()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.StatisticAdmin.changelist_view"><code class="docutils literal notranslate"><span class="pre">StatisticAdmin.changelist_view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.model"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.can_delete"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.can_delete</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.extra"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.extra</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.max_num"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.max_num</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.show_change_link"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.show_change_link</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.fields"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.readonly_fields"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.readonly_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.title"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.title()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.authors"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.authors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.genre"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.genre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.isbn"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.isbn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.cover"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.cover()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.adapted"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.adapted()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorBookInLine.film_title"><code class="docutils literal notranslate"><span class="pre">AuthorBookInLine.film_title()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorPopulateForm"><code class="docutils literal notranslate"><span class="pre">AuthorPopulateForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorPopulateForm.allowed_extensions"><code class="docutils literal notranslate"><span class="pre">AuthorPopulateForm.allowed_extensions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.inlines"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.inlines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.list_filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.populate_form_class"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.populate_form_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.populate_command_class"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.populate_command_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.get_readonly_fields"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.get_readonly_fields()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.AuthorAdmin.name"><code class="docutils literal notranslate"><span class="pre">AuthorAdmin.name()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm"><code class="docutils literal notranslate"><span class="pre">BookForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm.Meta"><code class="docutils literal notranslate"><span class="pre">BookForm.Meta</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm.Meta.model"><code class="docutils literal notranslate"><span class="pre">BookForm.Meta.model</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm.Meta.fields"><code class="docutils literal notranslate"><span class="pre">BookForm.Meta.fields</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm.clean"><code class="docutils literal notranslate"><span class="pre">BookForm.clean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm.Media"><code class="docutils literal notranslate"><span class="pre">BookForm.Media</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm.Media.js"><code class="docutils literal notranslate"><span class="pre">BookForm.Media.js</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookForm._meta"><code class="docutils literal notranslate"><span class="pre">BookForm._meta</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAddMultipleForm"><code class="docutils literal notranslate"><span class="pre">BookAddMultipleForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAddMultipleForm.author"><code class="docutils literal notranslate"><span class="pre">BookAddMultipleForm.author</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline.model"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline.extra"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline.extra</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline.fields"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline.fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline.autocomplete_fields"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline.autocomplete_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline.sortable_field_name"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline.sortable_field_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAuthorInline.get_extra"><code class="docutils literal notranslate"><span class="pre">BookAuthorInline.get_extra()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookPopulateForm"><code class="docutils literal notranslate"><span class="pre">BookPopulateForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookPopulateForm.allowed_extensions"><code class="docutils literal notranslate"><span class="pre">BookPopulateForm.allowed_extensions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin"><code class="docutils literal notranslate"><span class="pre">BookAdmin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.form"><code class="docutils literal notranslate"><span class="pre">BookAdmin.form</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.inlines"><code class="docutils literal notranslate"><span class="pre">BookAdmin.inlines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.list_display"><code class="docutils literal notranslate"><span class="pre">BookAdmin.list_display</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.search_fields"><code class="docutils literal notranslate"><span class="pre">BookAdmin.search_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.list_filter"><code class="docutils literal notranslate"><span class="pre">BookAdmin.list_filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.readonly_fields"><code class="docutils literal notranslate"><span class="pre">BookAdmin.readonly_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.fieldsets"><code class="docutils literal notranslate"><span class="pre">BookAdmin.fieldsets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.multiple_url"><code class="docutils literal notranslate"><span class="pre">BookAdmin.multiple_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.multiple_button"><code class="docutils literal notranslate"><span class="pre">BookAdmin.multiple_button</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.populate_form_class"><code class="docutils literal notranslate"><span class="pre">BookAdmin.populate_form_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.populate_command_class"><code class="docutils literal notranslate"><span class="pre">BookAdmin.populate_command_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.is_zip_file"><code class="docutils literal notranslate"><span class="pre">BookAdmin.is_zip_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.display_authors"><code class="docutils literal notranslate"><span class="pre">BookAdmin.display_authors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.cover_preview"><code class="docutils literal notranslate"><span class="pre">BookAdmin.cover_preview()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.save_model"><code class="docutils literal notranslate"><span class="pre">BookAdmin.save_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.save_formset"><code class="docutils literal notranslate"><span class="pre">BookAdmin.save_formset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._save_authors_from_formset"><code class="docutils literal notranslate"><span class="pre">BookAdmin._save_authors_from_formset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._finalize_book_creation"><code class="docutils literal notranslate"><span class="pre">BookAdmin._finalize_book_creation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._update_book_isbn_if_needed"><code class="docutils literal notranslate"><span class="pre">BookAdmin._update_book_isbn_if_needed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._snapshot_book_state"><code class="docutils literal notranslate"><span class="pre">BookAdmin._snapshot_book_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._diff_snapshots"><code class="docutils literal notranslate"><span class="pre">BookAdmin._diff_snapshots()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.get_urls"><code class="docutils literal notranslate"><span class="pre">BookAdmin.get_urls()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin.add_multiple_books_view"><code class="docutils literal notranslate"><span class="pre">BookAdmin.add_multiple_books_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._handle_multiple_books_post"><code class="docutils literal notranslate"><span class="pre">BookAdmin._handle_multiple_books_post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._create_books_from_post_data"><code class="docutils literal notranslate"><span class="pre">BookAdmin._create_books_from_post_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._create_single_book_from_post"><code class="docutils literal notranslate"><span class="pre">BookAdmin._create_single_book_from_post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._extract_book_data_from_post"><code class="docutils literal notranslate"><span class="pre">BookAdmin._extract_book_data_from_post()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._show_creation_message"><code class="docutils literal notranslate"><span class="pre">BookAdmin._show_creation_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.admin.html#bookprocess.admin.BookAdmin._render_multiple_books_form"><code class="docutils literal notranslate"><span class="pre">BookAdmin._render_multiple_books_form()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.apps.html">apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.apps.html#bookprocess.apps.BookprocessConfig"><code class="docutils literal notranslate"><span class="pre">BookprocessConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.apps.html#bookprocess.apps.BookprocessConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">BookprocessConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.apps.html#bookprocess.apps.BookprocessConfig.name"><code class="docutils literal notranslate"><span class="pre">BookprocessConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.models.html">models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality"><code class="docutils literal notranslate"><span class="pre">Nationality</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.name"><code class="docutils literal notranslate"><span class="pre">Nationality.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.code"><code class="docutils literal notranslate"><span class="pre">Nationality.code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Nationality.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Nationality.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.author_set"><code class="docutils literal notranslate"><span class="pre">Nationality.author_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.id"><code class="docutils literal notranslate"><span class="pre">Nationality.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Nationality.objects"><code class="docutils literal notranslate"><span class="pre">Nationality.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre"><code class="docutils literal notranslate"><span class="pre">Genre</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre.name"><code class="docutils literal notranslate"><span class="pre">Genre.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Genre.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Genre.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre.book_set"><code class="docutils literal notranslate"><span class="pre">Genre.book_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre.id"><code class="docutils literal notranslate"><span class="pre">Genre.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Genre.objects"><code class="docutils literal notranslate"><span class="pre">Genre.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author"><code class="docutils literal notranslate"><span class="pre">Author</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.first_name"><code class="docutils literal notranslate"><span class="pre">Author.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.last_name"><code class="docutils literal notranslate"><span class="pre">Author.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.nationality"><code class="docutils literal notranslate"><span class="pre">Author.nationality</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.name"><code class="docutils literal notranslate"><span class="pre">Author.name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Author.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Author.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.bookauthor_set"><code class="docutils literal notranslate"><span class="pre">Author.bookauthor_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.books"><code class="docutils literal notranslate"><span class="pre">Author.books</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.id"><code class="docutils literal notranslate"><span class="pre">Author.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.nationality_id"><code class="docutils literal notranslate"><span class="pre">Author.nationality_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Author.objects"><code class="docutils literal notranslate"><span class="pre">Author.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book"><code class="docutils literal notranslate"><span class="pre">Book</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.title"><code class="docutils literal notranslate"><span class="pre">Book.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.authors"><code class="docutils literal notranslate"><span class="pre">Book.authors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.genre"><code class="docutils literal notranslate"><span class="pre">Book.genre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.cover"><code class="docutils literal notranslate"><span class="pre">Book.cover</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.adapted"><code class="docutils literal notranslate"><span class="pre">Book.adapted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.film_title"><code class="docutils literal notranslate"><span class="pre">Book.film_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.isbn"><code class="docutils literal notranslate"><span class="pre">Book.isbn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.generate_isbn"><code class="docutils literal notranslate"><span class="pre">Book.generate_isbn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.ordered_authors"><code class="docutils literal notranslate"><span class="pre">Book.ordered_authors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Book.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Book.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.bookauthor_set"><code class="docutils literal notranslate"><span class="pre">Book.bookauthor_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.genre_id"><code class="docutils literal notranslate"><span class="pre">Book.genre_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.id"><code class="docutils literal notranslate"><span class="pre">Book.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Book.objects"><code class="docutils literal notranslate"><span class="pre">Book.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor"><code class="docutils literal notranslate"><span class="pre">BookAuthor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.book"><code class="docutils literal notranslate"><span class="pre">BookAuthor.book</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.author"><code class="docutils literal notranslate"><span class="pre">BookAuthor.author</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.order"><code class="docutils literal notranslate"><span class="pre">BookAuthor.order</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.save"><code class="docutils literal notranslate"><span class="pre">BookAuthor.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">BookAuthor.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">BookAuthor.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.author_id"><code class="docutils literal notranslate"><span class="pre">BookAuthor.author_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.book_id"><code class="docutils literal notranslate"><span class="pre">BookAuthor.book_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.id"><code class="docutils literal notranslate"><span class="pre">BookAuthor.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.BookAuthor.objects"><code class="docutils literal notranslate"><span class="pre">BookAuthor.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic"><code class="docutils literal notranslate"><span class="pre">Statistic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.books_per_genre"><code class="docutils literal notranslate"><span class="pre">Statistic.books_per_genre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.authors_per_nationality"><code class="docutils literal notranslate"><span class="pre">Statistic.authors_per_nationality</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.authors_stats"><code class="docutils literal notranslate"><span class="pre">Statistic.authors_stats</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Statistic.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Statistic.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.id"><code class="docutils literal notranslate"><span class="pre">Statistic.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.models.html#bookprocess.models.Statistic.objects"><code class="docutils literal notranslate"><span class="pre">Statistic.objects</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.views.html">views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.views.html#bookprocess.views.books_list_view"><code class="docutils literal notranslate"><span class="pre">books_list_view()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.views.html#bookprocess.views.book_detail_view"><code class="docutils literal notranslate"><span class="pre">book_detail_view()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.management.html">management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.management.commands.html">commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_author.html">admin_init_author</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_author.html#bookprocess.management.commands.admin_init_author.Command"><code class="docutils literal notranslate"><span class="pre">Command</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_author.html#bookprocess.management.commands.admin_init_author.Command.add_arguments"><code class="docutils literal notranslate"><span class="pre">Command.add_arguments()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_author.html#bookprocess.management.commands.admin_init_author.Command.handle"><code class="docutils literal notranslate"><span class="pre">Command.handle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_book.html">admin_init_book</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_book.html#bookprocess.management.commands.admin_init_book._to_isbn_string"><code class="docutils literal notranslate"><span class="pre">_to_isbn_string()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_book.html#bookprocess.management.commands.admin_init_book.Command"><code class="docutils literal notranslate"><span class="pre">Command</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_book.html#bookprocess.management.commands.admin_init_book.Command.add_arguments"><code class="docutils literal notranslate"><span class="pre">Command.add_arguments()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_book.html#bookprocess.management.commands.admin_init_book.Command.handle"><code class="docutils literal notranslate"><span class="pre">Command.handle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_genre.html">admin_init_genre</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_genre.html#bookprocess.management.commands.admin_init_genre.GENRES"><code class="docutils literal notranslate"><span class="pre">GENRES</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_genre.html#bookprocess.management.commands.admin_init_genre.Command"><code class="docutils literal notranslate"><span class="pre">Command</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_genre.html#bookprocess.management.commands.admin_init_genre.Command.add_arguments"><code class="docutils literal notranslate"><span class="pre">Command.add_arguments()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_genre.html#bookprocess.management.commands.admin_init_genre.Command.handle"><code class="docutils literal notranslate"><span class="pre">Command.handle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_nationality.html">admin_init_nationality</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_nationality.html#bookprocess.management.commands.admin_init_nationality.COUNTRIES"><code class="docutils literal notranslate"><span class="pre">COUNTRIES</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_nationality.html#bookprocess.management.commands.admin_init_nationality.Command"><code class="docutils literal notranslate"><span class="pre">Command</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_nationality.html#bookprocess.management.commands.admin_init_nationality.Command.add_arguments"><code class="docutils literal notranslate"><span class="pre">Command.add_arguments()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.admin_init_nationality.html#bookprocess.management.commands.admin_init_nationality.Command.handle"><code class="docutils literal notranslate"><span class="pre">Command.handle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.management.commands.init_roles.html">init_roles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../bookprocess.management.commands.init_roles.html#bookprocess.management.commands.init_roles.Command"><code class="docutils literal notranslate"><span class="pre">Command</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../bookprocess.management.commands.init_roles.html#bookprocess.management.commands.init_roles.Command.handle"><code class="docutils literal notranslate"><span class="pre">Command.handle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.services.html">services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.services.html#bookprocess.services.AuditLogService"><code class="docutils literal notranslate"><span class="pre">AuditLogService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.services.html#bookprocess.services.AuditLogService.log_book_creation"><code class="docutils literal notranslate"><span class="pre">AuditLogService.log_book_creation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../bookprocess.services.html#bookprocess.services.AuditLogService.log_book_update"><code class="docutils literal notranslate"><span class="pre">AuditLogService.log_book_update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bookprocess.utils.html">utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.PREFIXES"><code class="docutils literal notranslate"><span class="pre">PREFIXES</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.isbn13_check_digit"><code class="docutils literal notranslate"><span class="pre">isbn13_check_digit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils._normalize_nat_code"><code class="docutils literal notranslate"><span class="pre">_normalize_nat_code()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils._is_allowed_nat_code"><code class="docutils literal notranslate"><span class="pre">_is_allowed_nat_code()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils._get_book_model"><code class="docutils literal notranslate"><span class="pre">_get_book_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils._get_main_author_code_from_book"><code class="docutils literal notranslate"><span class="pre">_get_main_author_code_from_book()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.generate_unique_isbn_for_nationality"><code class="docutils literal notranslate"><span class="pre">generate_unique_isbn_for_nationality()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.generate_unique_isbn_from_book"><code class="docutils literal notranslate"><span class="pre">generate_unique_isbn_from_book()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.represent_related"><code class="docutils literal notranslate"><span class="pre">represent_related()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.serialize_model_instance"><code class="docutils literal notranslate"><span class="pre">serialize_model_instance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bookprocess.utils.html#bookprocess.utils.notify"><code class="docutils literal notranslate"><span class="pre">notify()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Book Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">bookprocess.utils</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for bookprocess.utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Utility helpers for ISBN generation, model serialization and messaging.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">randint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.apps</span><span class="w"> </span><span class="kn">import</span> <span class="n">apps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">messages</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ForeignKey</span><span class="p">,</span> <span class="n">ManyToManyField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models.fields.files</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageFieldFile</span><span class="p">,</span> <span class="n">FieldFile</span>
+
+<span class="n">PREFIXES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;978&#39;</span><span class="p">,</span> <span class="s1">&#39;979&#39;</span><span class="p">]</span> <span class="c1">#: Allowed ISBN-13 prefixes.</span>
+
+<div class="viewcode-block" id="isbn13_check_digit">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils.isbn13_check_digit">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">isbn13_check_digit</span><span class="p">(</span><span class="n">digits12</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the ISBN-13 check digit for 12 digits.</span>
+
+<span class="sd">    The ISBN-13 check digit uses alternating weights 1 and 3 for the</span>
+<span class="sd">    first 12 digits. This helper computes the final check digit so the</span>
+<span class="sd">    full 13-digit ISBN is valid according to the ISBN-13 specification.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    digits12 : str</span>
+<span class="sd">        Exactly 12 numeric characters representing the first 12 digits</span>
+<span class="sd">        of an ISBN-13 number.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        A single character string representing the check digit (&quot;0&quot;..&quot;9&quot;).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits12</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">12</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">digits12</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;digits12 must contain exactly 12 digits (0-9).&quot;</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">digits12</span><span class="p">):</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">else</span> <span class="mi">3</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="o">*</span> <span class="n">weight</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">-</span> <span class="p">(</span><span class="n">total</span> <span class="o">%</span> <span class="mi">10</span><span class="p">))</span> <span class="o">%</span> <span class="mi">10</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">check</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="_normalize_nat_code">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils._normalize_nat_code">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">_normalize_nat_code</span><span class="p">(</span><span class="n">nat_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Normalize an input nationality code to a 3-digit string.</span>
+
+<span class="sd">    The function keeps only digits from the input and returns a 3-digit</span>
+<span class="sd">    string. If input is missing or contains no digits the sentinel</span>
+<span class="sd">    ``&#39;000&#39;`` is returned.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nat_code : Optional[str]</span>
+<span class="sd">        Input that may contain a nationality code (digits and other</span>
+<span class="sd">        characters are tolerated).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        A 3-character digit string (e.g. ``&#39;600&#39;`` or ``&#39;007&#39;``) or</span>
+<span class="sd">        ``&#39;000&#39;`` for missing/invalid input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">nat_code</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;000&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">nat_code</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">digits</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="n">ch</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">digits</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;000&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">digits</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">digits</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="_is_allowed_nat_code">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils._is_allowed_nat_code">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_allowed_nat_code</span><span class="p">(</span><span class="n">code3</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return whether a 3-digit nationality code is allowed for ISBN seed.</span>
+
+<span class="sd">    The current policy permits the sentinel codes ``&#39;000&#39;`` and</span>
+<span class="sd">    ``&#39;111&#39;``, the range ``600-621`` and the range ``950-989``. This</span>
+<span class="sd">    function centralizes that rule and can be extended if a canonical</span>
+<span class="sd">    list of allowed codes is provided later.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    code3 : str</span>
+<span class="sd">        A 3-character string containing digits.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        True when the code is permitted as part of the ISBN seed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">code3</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;000&quot;</span><span class="p">,</span> <span class="s2">&quot;111&quot;</span><span class="p">}:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">code3</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="mi">600</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">621</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="mi">950</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">989</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="_get_book_model">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils._get_book_model">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_book_model</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve the Book model class dynamically.</span>
+
+<span class="sd">    This helper uses Django&#39;s app registry to avoid circular import</span>
+<span class="sd">    issues when the Book model needs to be referenced in utility</span>
+<span class="sd">    functions that are imported early in the module initialization.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    type</span>
+<span class="sd">        The :class:`bookprocess.models.Book` model class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;bookprocess&quot;</span><span class="p">,</span> <span class="s2">&quot;Book&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="_get_main_author_code_from_book">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils._get_main_author_code_from_book">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_main_author_code_from_book</span><span class="p">(</span><span class="n">book_instance</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract the primary author&#39;s nationality code from a Book instance.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    book_instance</span>
+<span class="sd">        A :class:`bookprocess.models.Book` instance.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Optional[str]</span>
+<span class="sd">        The 3-character nationality code extracted from the chosen</span>
+<span class="sd">        author, or ``None`` if no author or nationality is available.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">BookAuthor</span> <span class="o">=</span> <span class="n">apps</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;bookprocess&quot;</span><span class="p">,</span> <span class="s2">&quot;BookAuthor&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">LookupError</span><span class="p">:</span>
+        <span class="n">BookAuthor</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">BookAuthor</span><span class="p">:</span>
+            <span class="n">qs</span> <span class="o">=</span> <span class="n">BookAuthor</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">book</span><span class="o">=</span><span class="n">book_instance</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;order&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;author__nationality&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">qs</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">main_author</span> <span class="o">=</span> <span class="n">qs</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">author</span>
+                <span class="k">if</span> <span class="n">main_author</span><span class="o">.</span><span class="n">nationality</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">main_author</span><span class="o">.</span><span class="n">nationality</span><span class="o">.</span><span class="n">code</span>
+
+        <span class="n">first_author</span> <span class="o">=</span> <span class="n">book_instance</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">first_author</span> <span class="ow">and</span> <span class="n">first_author</span><span class="o">.</span><span class="n">nationality</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">first_author</span><span class="o">.</span><span class="n">nationality</span><span class="o">.</span><span class="n">code</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="generate_unique_isbn_for_nationality">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils.generate_unique_isbn_for_nationality">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_unique_isbn_for_nationality</span><span class="p">(</span><span class="n">nat_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">max_tries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a unique ISBN-13 string using a nationality code seed.</span>
+
+<span class="sd">    The function normalizes the provided nationality code and, if it is</span>
+<span class="sd">    not allowed, falls back to the sentinel ``&#39;000&#39;`` code. It then</span>
+<span class="sd">    repeatedly generates candidate ISBNs (prefix + nat + pub_id + check)</span>
+<span class="sd">    until a non-existing ISBN is found or ``max_tries`` is reached.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nat_code : Optional[str]</span>
+<span class="sd">        Input nationality code used as part of the ISBN seed.</span>
+<span class="sd">    max_tries : int</span>
+<span class="sd">        Maximum number of attempts to find a unique ISBN before raising</span>
+<span class="sd">        a RuntimeError.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        A unique, 13-character ISBN string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nat</span> <span class="o">=</span> <span class="n">_normalize_nat_code</span><span class="p">(</span><span class="n">nat_code</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_allowed_nat_code</span><span class="p">(</span><span class="n">nat</span><span class="p">):</span>
+        <span class="n">nat</span> <span class="o">=</span> <span class="s2">&quot;000&quot;</span>
+
+    <span class="n">Book</span> <span class="o">=</span> <span class="n">_get_book_model</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_tries</span><span class="p">):</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">PREFIXES</span><span class="p">)</span>
+        <span class="n">pub_id</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">999999</span><span class="p">)</span><span class="si">:</span><span class="s2">06d</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">first12</span> <span class="o">=</span> <span class="n">prefix</span> <span class="o">+</span> <span class="n">nat</span> <span class="o">+</span> <span class="n">pub_id</span>
+        <span class="n">control</span> <span class="o">=</span> <span class="n">isbn13_check_digit</span><span class="p">(</span><span class="n">first12</span><span class="p">)</span>
+        <span class="n">isbn13</span> <span class="o">=</span> <span class="n">first12</span> <span class="o">+</span> <span class="n">control</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Book</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">isbn</span><span class="o">=</span><span class="n">isbn13</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">isbn13</span>
+
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Nu am reușit să genereze un ISBN unic în limita încercărilor.&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_unique_isbn_from_book">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils.generate_unique_isbn_from_book">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_unique_isbn_from_book</span><span class="p">(</span><span class="n">book_instance</span><span class="p">,</span> <span class="n">nat_code_override</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a unique ISBN-13 for a Book instance.</span>
+
+<span class="sd">    The function first respects an explicit ``nat_code_override`` if</span>
+<span class="sd">    provided; otherwise it attempts to extract the main author&#39;s</span>
+<span class="sd">    nationality code and delegate to</span>
+<span class="sd">    :func:`generate_unique_isbn_for_nationality`. If neither is</span>
+<span class="sd">    available it falls back to using ``&#39;000&#39;`` as the seed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    book_instance</span>
+<span class="sd">        The Book instance for which an ISBN should be generated.</span>
+<span class="sd">    nat_code_override : Optional[str]</span>
+<span class="sd">        An explicit nationality code to use instead of extracting from</span>
+<span class="sd">        the book&#39;s authors.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        A unique ISBN-13 string.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">nat_code_override</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">generate_unique_isbn_for_nationality</span><span class="p">(</span><span class="n">nat_code_override</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">nat_from_author</span> <span class="o">=</span> <span class="n">_get_main_author_code_from_book</span><span class="p">(</span><span class="n">book_instance</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nat_from_author</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">generate_unique_isbn_for_nationality</span><span class="p">(</span><span class="n">nat_from_author</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="n">generate_unique_isbn_for_nationality</span><span class="p">(</span><span class="s2">&quot;000&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="represent_related">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils.represent_related">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">represent_related</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a human-friendly representation for a related object.</span>
+
+<span class="sd">    The helper inspects common attribute names (``name``, ``title``,</span>
+<span class="sd">    ``code``, ``full_name``) and returns the first matching attribute&#39;s</span>
+<span class="sd">    value. If the attribute is callable it will be called. If no known</span>
+<span class="sd">    attribute is present the object&#39;s ``str()`` value is returned.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    obj</span>
+<span class="sd">        Any model instance (or ``None``).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Optional[str]</span>
+<span class="sd">        A human-readable string or ``None`` if ``obj`` is ``None``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="s2">&quot;full_name&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">field</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">val</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="serialize_model_instance">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils.serialize_model_instance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">serialize_model_instance</span><span class="p">(</span><span class="n">instance</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Serialize a Django model instance into a human-readable dict.</span>
+
+<span class="sd">    The serializer converts foreign keys into a representative string</span>
+<span class="sd">    (using :func:`represent_related`), flattens many-to-many relations</span>
+<span class="sd">    into comma-separated lists of names, and converts file fields to</span>
+<span class="sd">    their stored filenames. The function uses ``select_related`` and</span>
+<span class="sd">    ``prefetch_related`` to minimize DB queries when re-loading the</span>
+<span class="sd">    instance by primary key.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    instance</span>
+<span class="sd">        A saved Django model instance (must have a valid ``pk``).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Mapping of field name -&gt; serializable value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">_meta</span>
+
+    <span class="n">instance</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">instance</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">objects</span>
+        <span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">fields</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">)])</span>
+        <span class="o">.</span><span class="n">prefetch_related</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">many_to_many</span><span class="p">])</span>
+        <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">instance</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">get_fields</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">field</span><span class="o">.</span><span class="n">auto_created</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">field</span><span class="o">.</span><span class="n">concrete</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">name</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">):</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">represent_related</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">ManyToManyField</span><span class="p">):</span>
+            <span class="n">related_qs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">represent_related</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">related_qs</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="n">ImageFieldFile</span><span class="p">,</span> <span class="n">FieldFile</span><span class="p">)):</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="notify">
+<a class="viewcode-back" href="../../bookprocess.utils.html#bookprocess.utils.notify">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">notify</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display a message via Django messages or a management command.</span>
+
+<span class="sd">    The helper centralizes how messages are emitted so callers can be</span>
+<span class="sd">    ignorant of the current execution context (web request vs. manage</span>
+<span class="sd">    command). When ``request`` is provided the Django messages API is</span>
+<span class="sd">    used; when ``command`` is provided the management command&#39;s style</span>
+<span class="sd">    helpers are used; otherwise the message prints to stdout.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    request : Optional[django.http.HttpRequest]</span>
+<span class="sd">        Optional request object; when provided the message is added to</span>
+<span class="sd">        the request using Django&#39;s messages framework.</span>
+<span class="sd">    command : Optional[django.core.management.BaseCommand]</span>
+<span class="sd">        Optional management command instance; when provided the message</span>
+<span class="sd">        is written to the command&#39;s stdout using the styled helper.</span>
+<span class="sd">    msg : str</span>
+<span class="sd">        The message text to display.</span>
+<span class="sd">    level : str</span>
+<span class="sd">        One of ``&#39;info&#39;``, ``&#39;success&#39;``, ``&#39;warning&#39;`` or ``&#39;error&#39;``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">level_fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">messages</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+        <span class="n">level_fn</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">style_fn</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">style</span><span class="p">,</span> <span class="n">level</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">command</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">SUCCESS</span><span class="p">)</span>
+        <span class="n">command</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">style_fn</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mihalcea Marius-Alex.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

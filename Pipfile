@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+django-admin-sortable2 = "*"
+django-admin-list-filter-dropdown = "*"
+pandas = "*"
+openpyxl = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-rtd-theme = "*"
+sphinx-autodoc-typehints = "*"
+django-auditlog = "*"
+pyinstaller = "*"
+requests = "*"
+pystray = "*"
+rst2pdf = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.14"

@@ -1,0 +1,219 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+.book-entry {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    position: relative;
+    max-width: 800px;
+}
+.book-entry h3 {
+    margin-top: 0;
+    color: #417690;
+}
+.remove-book-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ba2121;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.remove-book-btn:hover {
+    background: #a41515;
+}
+.add-book-btn {
+    background: #417690;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 15px 0;
+    font-size: 14px;
+}
+.add-book-btn:hover {
+    background: #205067;
+}
+.form-row {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+.form-row label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.form-row input[type="text"],
+.form-row select {
+    width: 100%;
+    max-width: 400px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.form-row input[type="checkbox"] {
+    width: auto;
+}
+.form-row input[type="file"] {
+    width: auto;
+}
+#books-container {
+    max-width: 800px;
+}
+fieldset.module.aligned {
+    max-width: 800px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" id="multiple-books-form">
+    {% csrf_token %}
+
+    <fieldset class="module aligned">
+        <h2>Author</h2>
+        <div class="form-row">
+            {{ form.author.errors }}
+            <label for="{{ form.author.id_for_label }}">{{ form.author.label }}:</label>
+            {{ form.author }}
+        </div>
+    </fieldset>
+
+    <h2>Books</h2>
+    <div id="books-container"></div>
+
+    <button type="button" class="add-book-btn" id="add-book-btn">
+        ➕ Add Another Book
+    </button>
+
+    <div class="submit-row">
+        <input type="submit" value="Save All Books" class="default" />
+        <a href="../" class="button cancel-link">Cancel</a>
+    </div>
+</form>
+
+<script>
+const genres = [
+    { id: '', name: '---------' },
+    {% for genre in genres %}
+    { id: {{ genre.id }}, name: '{{ genre.name|escapejs }}' },
+    {% endfor %}
+];
+
+function createBookEntry(index) {
+    const bookDiv = document.createElement('div');
+    bookDiv.className = 'book-entry';
+    bookDiv.dataset.index = index;
+
+    let genreOptions = '';
+    genres.forEach(genre => {
+        genreOptions += `<option value="${genre.id}">${genre.name}</option>`;
+    });
+
+    bookDiv.innerHTML = `
+        <h3>Book ${index + 1}</h3>
+        ${index > 0 ? '<button type="button" class="remove-book-btn" onclick="removeBook(this)">✕ Remove</button>' : ''}
+
+        <div class="form-row">
+            <label for="book_${index}_title">Title *</label>
+            <input type="text" name="book_${index}_title" id="book_${index}_title" required>
+        </div>
+
+        <div class="form-row">
+            <label for="book_${index}_genre">Genre *</label>
+            <select name="book_${index}_genre" id="book_${index}_genre" required>
+                ${genreOptions}
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label for="book_${index}_adapted">Adapted</label>
+            <input type="checkbox" name="book_${index}_adapted" id="book_${index}_adapted" onchange="toggleFilmTitle(${index})">
+        </div>
+
+        <div class="form-row" id="film_title_row_${index}" style="display: none;">
+            <label for="book_${index}_film_title">Film Title</label>
+            <input type="text" name="book_${index}_film_title" id="book_${index}_film_title">
+        </div>
+
+        <div class="form-row">
+            <label for="book_${index}_cover">Cover</label>
+            <input type="file" name="book_${index}_cover" id="book_${index}_cover" accept="image/*">
+        </div>
+    `;
+
+    return bookDiv;
+}
+
+function addBook() {
+    const container = document.getElementById('books-container');
+    const currentIndex = document.querySelectorAll('.book-entry').length;
+    const bookEntry = createBookEntry(currentIndex);
+    container.appendChild(bookEntry);
+}
+
+function removeBook(button) {
+    const bookEntry = button.closest('.book-entry');
+    bookEntry.remove();
+    renumberAllBooks();
+}
+
+function renumberAllBooks() {
+    const bookEntries = document.querySelectorAll('.book-entry');
+    bookEntries.forEach((entry, newIndex) => {
+        const h3 = entry.querySelector('h3');
+        h3.textContent = `Book ${newIndex + 1}`;
+
+        const fields = ['title', 'genre', 'adapted', 'film_title', 'cover'];
+        fields.forEach(field => {
+            const input = entry.querySelector(`[name^="book_"][name$="_${field}"]`);
+            if (input) {
+                const oldId = input.getAttribute('id');
+                input.setAttribute('name', `book_${newIndex}_${field}`);
+                input.setAttribute('id', `book_${newIndex}_${field}`);
+
+                const label = entry.querySelector(`label[for="${oldId}"]`);
+                if (label) {
+                    label.setAttribute('for', `book_${newIndex}_${field}`);
+                }
+            }
+        });
+
+        const filmRow = entry.querySelector('[id^="film_title_row_"]');
+        if (filmRow) {
+            filmRow.setAttribute('id', `film_title_row_${newIndex}`);
+        }
+
+        const adaptedCheckbox = entry.querySelector(`[name="book_${newIndex}_adapted"]`);
+        if (adaptedCheckbox) {
+            adaptedCheckbox.setAttribute('onchange', `toggleFilmTitle(${newIndex})`);
+        }
+
+        entry.dataset.index = newIndex;
+    });
+}
+
+function toggleFilmTitle(index) {
+    const checkbox = document.getElementById(`book_${index}_adapted`);
+    const filmTitleRow = document.getElementById(`film_title_row_${index}`);
+    filmTitleRow.style.display = checkbox.checked ? 'flex' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    addBook();
+    document.getElementById('add-book-btn').addEventListener('click', addBook);
+});
+</script>
+{% endblock %}

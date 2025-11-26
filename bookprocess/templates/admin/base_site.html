@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+
+{% block title %}Book Library Admin{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">Book Library Admin</a>
+    </h1>
+{% endblock %}
